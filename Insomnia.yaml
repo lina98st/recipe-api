@@ -1,0 +1,121 @@
+type: collection.insomnia.rest/5.0
+schema_version: "5.1"
+name: Recipe API
+meta:
+  id: wrk_scratchpad
+  created: 1783975200762
+  modified: 1784225140294
+  description: ""
+collection:
+  - url: http://localhost:3000/categories
+    name: POST Categories
+    meta:
+      id: req_9271997e00df4855ba165a1d1aab9ff6
+      created: 1784224126851
+      modified: 1784225510184
+      isPrivate: false
+      description: ""
+      sortKey: -1784224126851
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "French"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/categories
+    name: GET Categories
+    meta:
+      id: req_e5327b7a2c844e789c47ab93145e56fa
+      created: 1784225463995
+      modified: 1784225481502
+      isPrivate: false
+      description: ""
+      sortKey: -1784225463995
+    method: GET
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/categories/1
+    name: PATCH Category
+    meta:
+      id: req_51579198ade44c7d822d71f284aa6685
+      created: 1784225521630
+      modified: 1784225545853
+      isPrivate: false
+      description: ""
+      sortKey: -1784094884741
+    method: PATCH
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Italian Cuisine"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/categories/1
+    name: DELETE Category
+    meta:
+      id: req_44667c6a3198451a9d0b7074d331ae39
+      created: 1784225564299
+      modified: 1784225574024
+      isPrivate: false
+      description: ""
+      sortKey: -1784030263686
+    method: DELETE
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "Italian Cuisine"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1784144346603
+    modified: 1784144346603
+environments:
+  name: Base Environment
+  meta:
+    id: env_99d30891da4bdcebc63947a8fc17f076de878684
+    created: 1784144346602
+    modified: 1784144346602
+    isPrivate: false
