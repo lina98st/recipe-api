@@ -1,0 +1,41 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:14.1-alpine3.15
+    container_name: recipe_db
+    restart: always
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: recipes
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  flask:
+    build: .
+    container_name: recipe_api
+    restart: always
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    environment:
+      FLASK_APP: src
+    volumes:
+      - .:/app
+
+  pgadmin:
+    image: dpage/pgadmin4:6.4
+    container_name: recipe_pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@example.com
+      PGADMIN_DEFAULT_PASSWORD: admin123
+    ports:
+      - "5433:80"
+
+volumes:
+  postgres_data:
