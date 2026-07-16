@@ -12,7 +12,7 @@ collection:
     meta:
       id: req_9271997e00df4855ba165a1d1aab9ff6
       created: 1784224126851
-      modified: 1784225510184
+      modified: 1784227970236
       isPrivate: false
       description: ""
       sortKey: -1784224126851
@@ -21,7 +21,7 @@ collection:
       mimeType: application/json
       text: |-
         {
-          "name": "French"
+          "name": "Swedish"
         }
     headers:
       - name: Content-Type
@@ -52,21 +52,21 @@ collection:
         send: true
         store: true
       rebuildPath: true
-  - url: http://localhost:3000/categories/1
+  - url: http://localhost:3000/recipes/1
     name: PATCH Category
     meta:
       id: req_51579198ade44c7d822d71f284aa6685
       created: 1784225521630
-      modified: 1784225545853
+      modified: 1784227419328
       isPrivate: false
       description: ""
       sortKey: -1784094884741
     method: PATCH
     body:
       mimeType: application/json
-      text: |-
+      text: |
         {
-          "name": "Italian Cuisine"
+          "category_id": 1
         }
     headers:
       - name: Content-Type
@@ -94,6 +94,176 @@ collection:
       text: |-
         {
           "name": "Italian Cuisine"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/recipes
+    name: GET Recipes
+    meta:
+      id: req_9a9759b8114e4cf48de1c33d6dbbcf7e
+      created: 1784226733504
+      modified: 1784228100992
+      isPrivate: false
+      description: ""
+      sortKey: -1784226733504
+    method: GET
+    body:
+      mimeType: application/json
+      text: ""
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/recipes
+    name: POST Recipes
+    meta:
+      id: req_7fb36c6481e24b3c9f711bbfba010262
+      created: 1784228107599
+      modified: 1784228147921
+      isPrivate: false
+      description: ""
+      sortKey: -1784226098749.5
+    method: POST
+    body:
+      mimeType: application/json
+      text: >-
+        {
+          "title": "Swedish Meatballs",
+          "instructions": "Form meatballs, fry until browned and serve with creamy sauce and mashed potatoes.",
+          "cooking_time": 45,
+          "category_id": 7
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/users
+    name: POST Users
+    meta:
+      id: req_556b53b23982497cb541b0476b5dfde9
+      created: 1784228187616
+      modified: 1784228217500
+      isPrivate: false
+      description: ""
+      sortKey: -1784228187616
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "alina@example.com",
+          "password": "recipe123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/users
+    name: GET Users
+    meta:
+      id: req_ce8489085ba843d8bd7b6655d1451c59
+      created: 1784228234380
+      modified: 1784228238021
+      isPrivate: false
+      description: ""
+      sortKey: -1784227460560
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "email": "alina@example.com",
+          "password": "recipe123"
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/ratings
+    name: POST Ratings
+    meta:
+      id: req_07f232fd4f944a63b275f5c38bc1cf1f
+      created: 1784228255238
+      modified: 1784228305573
+      isPrivate: false
+      description: ""
+      sortKey: -1784228255238
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "score": 4,
+          "created_at": "2026-07-16",
+          "recipe_id": 6,
+          "user_id": 1
+        }
+    headers:
+      - name: Content-Type
+        value: application/json
+    settings:
+      renderRequestBody: true
+      encodeUrl: true
+      followRedirects: global
+      cookies:
+        send: true
+        store: true
+      rebuildPath: true
+  - url: http://localhost:3000/ratings
+    name: GET Ratings
+    meta:
+      id: req_0a466bf414f6484da82400fce01b445f
+      created: 1784228319817
+      modified: 1784228322768
+      isPrivate: false
+      description: ""
+      sortKey: -1784228221427
+    method: GET
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "score": 4,
+          "created_at": "2026-07-16",
+          "recipe_id": 6,
+          "user_id": 1
         }
     headers:
       - name: Content-Type
