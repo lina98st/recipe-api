@@ -84,4 +84,6 @@ I chose SQLAlchemy ORM because it provides a cleaner and more maintainable way t
 - Pagination
 - Average recipe ratings
 - Image uploads
-- Cloud deployment (Render or Railway)
+- Automated tests
+- GitHub Actions CI
+- Cloud deployment
