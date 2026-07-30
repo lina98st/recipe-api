@@ -51,3 +51,18 @@ def test_get_user_not_found():
 
     # Verify that the API returns 404 Not Found
     assert response.status_code == 404
+
+
+def test_missing_user_fields():
+    # Create a new Flask application instance
+    app = create_app()
+
+    # Create a test client for sending HTTP requests
+    client = app.test_client()
+
+    # Send a POST request with an empty JSON body
+    response = client.post("/users", json={})
+
+    # Verify that the request fails because required fields are missing
+    assert response.status_code == 400
+
