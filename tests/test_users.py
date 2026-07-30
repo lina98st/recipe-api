@@ -24,6 +24,8 @@ def test_random_salt():
     assert hashed_password != hashed_password2
 
 
+
+
 def test_get_users():
     # Create a new Flask application instance
     app = create_app()
@@ -36,7 +38,6 @@ def test_get_users():
 
     # Verify that the request was successful
     assert response.status_code == 200
-
 
 
 def test_get_user_not_found():
