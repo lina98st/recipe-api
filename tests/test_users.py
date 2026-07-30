@@ -53,6 +53,8 @@ def test_get_user_not_found():
     assert response.status_code == 404
 
 
+
+
 def test_missing_user_fields():
     # Create a new Flask application instance
     app = create_app()
@@ -66,3 +68,24 @@ def test_missing_user_fields():
     # Verify that the request fails because required fields are missing
     assert response.status_code == 400
 
+
+
+
+def test_create_user():
+    # Create a new Flask application instance
+    app = create_app()
+
+    # Create a test client for sending HTTP requests
+    client = app.test_client()
+
+    # Send a POST request with valid user data
+    response = client.post(
+        "/users",
+        json={
+            "email": "john@example.com",
+            "password": "@Ac4gF8Y6._esjan*"
+        }
+    )
+
+    # Verify that the user was created successfully
+    assert response.status_code == 200
