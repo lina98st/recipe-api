@@ -36,3 +36,18 @@ def test_get_users():
 
     # Verify that the request was successful
     assert response.status_code == 200
+
+
+
+def test_get_user_not_found():
+    # Create a new Flask application instance
+    app = create_app()
+
+    # Create a test client for sending HTTP requests
+    client = app.test_client()
+
+    # Send a GET request with a non-existing user ID
+    response = client.get("/users/999999")
+
+    # Verify that the API returns 404 Not Found
+    assert response.status_code == 404
