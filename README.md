@@ -18,6 +18,7 @@ The application uses SQLAlchemy ORM for database access and PostgreSQL as the da
 - Docker
 - pgAdmin
 - Insomnia
+- pytest
 
 ## API Endpoints
 
@@ -65,7 +66,16 @@ http://localhost:3000
 
 ## Testing
 
-The REST API was tested using Insomnia to verify CRUD operations and API responses.
+The project includes both manual and automated testing.
+
+### Manual Testing
+
+- CRUD operations and API responses were tested using Insomnia.
+
+### Automated Testing
+
+- Unit tests were implemented with pytest for password hashing.
+- API integration tests were implemented using Flask's test client to verify API endpoints and HTTP status codes.
 
 ## Retrospective
 
@@ -84,6 +94,5 @@ I chose SQLAlchemy ORM because it provides a cleaner and more maintainable way t
 - Pagination
 - Average recipe ratings
 - Image uploads
-- Automated tests
 - GitHub Actions CI
 - Cloud deployment
