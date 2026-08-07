@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      postgres:
+      db:
         image: postgres:14.1-alpine3.15
         env:
           POSTGRES_USER: postgres
@@ -31,6 +31,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           pip install pytest
+
+      - name: Map database host
+        run: echo "127.0.0.1 db" | sudo tee -a /etc/hosts
 
       - name: Run tests
         run: PYTHONPATH=. pytest
