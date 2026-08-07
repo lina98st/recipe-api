@@ -35,5 +35,10 @@ jobs:
       - name: Map database host
         run: echo "127.0.0.1 db" | sudo tee -a /etc/hosts
 
+      - name: Run migrations
+        run: |
+          export FLASK_APP=src
+          flask db upgrade
+
       - name: Run tests
         run: PYTHONPATH=. pytest
